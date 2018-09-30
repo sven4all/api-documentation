@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "lint:js": "eslint \"./source/theme/**/*.js\"",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "spellcheck": "yaspeller-ci *.rst",
+    "test": "npm run spellcheck"
   },
   "repository": {
     "type": "git",
@@ -23,15 +25,16 @@
   },
   "homepage": "https://www.mollie.com",
   "devDependencies": {
+    "@mollie/eslint-config-node": "0.0.1-alpha.3",
     "babel-eslint": "^10.0.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "eslint": "^4.19.1",
-    "@mollie/eslint-config-node": "0.0.1-alpha.3",
     "husky": "^0.14.3",
     "lint-staged": "^7.3.0",
     "node-sass": "^4.9.1",
-    "parcel-bundler": "^1.8.0"
+    "parcel-bundler": "^1.8.0",
+    "yaspeller-ci": "^1.0.0"
   },
   "dependencies": {
     "dropkickjs": "^2.2.4",
@@ -43,6 +46,7 @@
       "eslint",
       "prettier --write",
       "git add"
-    ]
+    ],
+    "*.rst": "yaspeller-ci"
   }
 }
