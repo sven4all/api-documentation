@@ -6,7 +6,7 @@
   "scripts": {
     "lint:js": "eslint \"./source/theme/**/*.js\"",
     "precommit": "lint-staged",
-    "spellcheck": "yaspeller-ci *.rst",
+    "spellcheck": "yaspeller-ci source/**/*.rst",
     "test": "npm run spellcheck"
   },
   "repository": {
