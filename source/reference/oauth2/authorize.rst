@@ -74,6 +74,15 @@ Parameters
 
        Possible values: ``auto`` ``force``
 
+   * - ``claim``
+
+       .. type:: boolean
+          :required: false
+
+     - This parameter can only be used by partners. When setting this parameters with the value of ``true`` we'll try to
+       claim the merchant for getting kickbacks. There will only be a claim action when the customer creates a new
+       merchant-account.
+
 Response
 --------
 ``301 Redirect``
@@ -107,6 +116,17 @@ Response
 
      - If the ``error`` field is present, this field will be present as well with an explanation of the error
        code.
+
+   * - ``claimed``
+
+       .. type:: int
+
+     - If you set ``claim`` in the request, you'll get the result of the claim with this parameter.
+
+       Possible values:
+
+       * ``1`` Merchant is successfully claimed
+       * ``0`` Merchant is not claimed.
 
 Example
 -------
